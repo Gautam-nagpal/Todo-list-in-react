@@ -2,7 +2,7 @@ import React from 'react';
 
 const Todoform = (props) =>{
     var disabled=true;
-    if(props.currentTask!==''){
+    if(props.currentTask.trim()){
         disabled=false
     }
     return (

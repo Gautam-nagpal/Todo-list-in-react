@@ -54,7 +54,7 @@ class Todoitems extends Component{
         </div>)
     }
 
-    form() {
+    form = () => {
         return(
             <form onSubmit={this.updateItem}>
                 <input type="text" 
@@ -62,7 +62,7 @@ class Todoitems extends Component{
                             this.input = value
                             }} 
                         defaultValue={this.props.details.name} />
-                <button id="update_button" type="submit" > update </button>
+                <button id="update_button" type="submit"  > update </button>
             </form>)
     }
 

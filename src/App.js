@@ -31,10 +31,11 @@ class App extends Component {
   editTask(index ,newValue){
     var tasks = this.state.tasks;
     var task = tasks[index];
+    if(newValue.length){
     task['name'] = newValue;
     this.setState({
       tasks
-    })
+    })}
   }
 
   deleteTask = (index) => {
@@ -89,6 +90,7 @@ class App extends Component {
                         key={index} 
                         deleteTask = {this.deleteTask}
                         editTask = {this.editTask}
+                        currentTask = {this.state.currentTask}
                         index={index}  
                         clickHandler={this.changeStatus} 
                         details={task} />
