@@ -108,18 +108,24 @@ class App extends Component {
           />
         </section>
         <hr />
-        <h2>Completed Task</h2>
-        <div>
-        {
-          this.state.tasks.map((task,index) => {
-            return <Todocompleted 
-                      key = {index}
-                      index={index}  
-                      clickHandler={this.changeStatus} 
-                      details={task}  />
-          })
-        }
-        </div>
+        <section>  
+          {
+            this.state.tasks.length>0 ? 
+                                          <div>
+                                            <h2>Completed Task</h2>
+                                          {
+                                            this.state.tasks.map((task,index) => {
+                                              return <Todocompleted 
+                                                        key = {index}
+                                                        index={index}  
+                                                        clickHandler={this.changeStatus} 
+                                                        details={task}  />
+                                            })
+                                          }
+                                          </div> : <p>heyyyy enter some tasks</p>
+          }
+          
+        </section>
       </div>
     );
     

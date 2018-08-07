@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Todocompleted from './Todocompleted';
 
 
 class Todoitems extends Component{
@@ -72,10 +73,12 @@ class Todoitems extends Component{
         const { editing } = this.state;
     return (
         <section>
-        {
-            editing ? this.form() : this.item()
-        }
-        
+            <div>
+                {
+                    editing ? this.form() : ( this.props.details.completed ? null : this.item() )
+                }
+            </div>
+            
 
         </section>
 
